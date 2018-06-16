@@ -11891,7 +11891,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
@@ -12011,7 +12011,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">r2_score</span>
@@ -12073,7 +12073,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the performance of this model</span>
@@ -12131,7 +12131,8 @@ Standard deviation of prices: $165,171.13
 <p><strong>Answer:</strong></p>
 <ul>
 <li>yes</li>
-<li>because the R<sup>2</sup> value = 0.923 which is near from the 1, as the R<sup>2</sup> used to see how close the data are to the fitted regression curve, so this value means that 92.3% of the points are predicted. also it's not 0 which means that the model explains none of the variability of the response data around its mean.</li>
+<li>because the R<sup>2</sup> value = 0.923 which is near from the 1, as the R<sup>2</sup> used to see how close the data are to the fitted regression curve, so we see that there is strong correlation between the true values and predictions.</li>
+<li>Note that having R<sup>2</sup> = 1 may not mean that we have a good model, because our model might be overfit at this point, so using R<sup>2</sup> score only doesn't tell us if the model if good fit or not. </li>
 </ul>
 
 </div>
@@ -13317,7 +13318,7 @@ Think about the pros and cons of adding more training points based on if the tra
 <ul>
 <li>Graph 2 with maximum depth = 3.</li>
 <li>The score of the training set is decreasing, and the score of the testing set is increasing. If we added more points the training and the testing curve would become closer to each other, until they overlap on each other.</li>
-<li>It would benefit the 3rd and the 4th curves as the testing score would increase and be nearer to the score of the training set, but for 1st curve adding more training points wouldn't be helpful as it's a high bais curve, so it needs more features instead. </li>
+<li>It may benefit the 3rd and the 4th curves, but not necessarily. As we see in the 3rd curve adding more data may make the testing curve and the training curve closer, but in the 4th curve adding more training data wouldn't help. For 1st curve adding more training points wouldn't be helpful as it's a high bais curve, so it needs more features instead. </li>
 </ul>
 
 </div>
@@ -14247,7 +14248,7 @@ Range in prices: $69,044.61
 <li>No, as it needs more features, as the prices range is high.</li>
 <li>No, as the values for each features compeletly different.</li>
 <li>No, we have to see the properties of the home too.</li>
-<li>I see that this model can be used in the real life but we have to add new feature for the inflation ratio, as It has great impact on the price of the house.</li>
+<li>I see that this model can be used in the real life but we have to add new feature for the inflation ratio, as It has great impact on the price of the house, also this data is quite old and doesn't capture enough about the houses features</li>
 </ul>
 
 </div>
