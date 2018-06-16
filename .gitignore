@@ -102,3 +102,6 @@ ENV/
 
 # secret files
 *.json
+
+# submitted zip files
+*.zip
