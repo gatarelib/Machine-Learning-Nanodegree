@@ -12212,12 +12212,12 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Fresh&#39;s score = -0.43658092937691806
-Milk&#39;s score = -0.3145872272003716
-Grocery&#39;s score = 0.6485536418053436
-Frozen&#39;s score = -2.4392605542049988
-Detergents_Paper&#39;s score = 0.6924018987750962
-Delicatessen&#39;s score = -0.6796548564011675
+<pre>Fresh&#39;s score = -0.3653046619693314
+Milk&#39;s score = -1.3805120364988719
+Grocery&#39;s score = 0.6451545423876981
+Frozen&#39;s score = -1.4292621417099167
+Detergents_Paper&#39;s score = 0.5942719099631835
+Delicatessen&#39;s score = -0.3756189382731905
 </pre>
 </div>
 </div>
@@ -12246,8 +12246,8 @@ Delicatessen&#39;s score = -0.6796548564011675
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ol>
-<li>I tried all features independant of one other, but I choose the Detergents_Paper feature.</li>
-<li>Score = 0.5944746998381445</li>
+<li>I tried all features independant of one other, but I choose the Grocery's feature.</li>
+<li>Score = 0.6451545423876981</li>
 <li>No, this feature isn't necessary as we could get a positive score.</li>
 </ol>
 
@@ -14108,7 +14108,7 @@ IKSJ6m9n+AAAAABJRU5ErkJggg==
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe43587e940&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f5b7a3f4cf8&gt;</pre>
 </div>
 
 </div>
@@ -18961,7 +18961,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span>
@@ -18990,6 +18990,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">outlier_freq</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">outlier_freq</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">outliers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span>
 <span class="c1"># Remove the outliers, if any were specified</span>
 <span class="n">good_data</span> <span class="o">=</span> <span class="n">log_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">log_data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">outliers</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -19746,6 +19747,17 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 </div>
 
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[65, 66, 128, 154, 75]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -19770,8 +19782,17 @@ Once you have performed this implementation, the dataset will be stored in the v
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>Yes, like point with index = 154, has an outlier for Grocery and Milk.</li>
-<li>Yes, It should, as it would make the dataset skewed, effect the mean, and variance, also would not give use correct answers.</li>
+<li><p>Yes</p>
+<ul>
+<li>data point number 154 in features Delicatessen , Grocery and Milk.</li>
+<li>65 in Fresh and Frozen.</li>
+<li>66 in Fresh and Delicatessen.</li>
+<li>128 in Fresh and Delicatessen.</li>
+<li>75 in Grocery and Detergents Paper.</li>
+</ul>
+</li>
+<li><p>Yes, It should, as it would make the dataset skewed, effect the mean, and variance, also would not give use correct answers.</p>
+</li>
 <li>if there are datapoints that are outliers in multiple categories, then this would effect the K-mean, as it would make the mean point of the category falls away from its cluster, so some point of that cluster would belong to another cluster which would reduce the score.  </li>
 </ul>
 
@@ -19803,7 +19824,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Apply PCA by fitting the good data with the same number of dimensions as features</span>
@@ -20265,11 +20286,11 @@ koAEAABQEpAAAABKAhIAAEDp/wH/wzthseDw7gAAAABJRU5ErkJggg==
 <ul>
 <li>First = .4430, Second = .2638</li>
 <li>variance = .4430 + .2638 + .1231 + .1012 = 0.9311</li>
-<li>Dimensions Explaination:<ol>
-<li>First Dimension, we see that there is a strong correlation between Detergent papers. so it got high variance which mean small information loss, and any increase in those features would increase the variance, so this dimension could be categorized as detergents store.</li>
-<li>Second Dimension, We see that all features are correlated with Fresh products, so any decrease in those would increase the variance, this dimension could be categorized as Fresh Store.</li>
-<li>Third Dimension, We see that Fresh is affecting the variance so any incrase in them or any decrease in the Fresh would increase the variance of that Dimension, and this Dimension could be Fresh store as point 2.</li>
-<li>Forth Dimension, We see that Frozen is mainly dominating the variance, so any increase in Frozen or decrease would increase the variance, this dimension could be categorized as store that sales Frozen products.</li>
+<li>Before that I want to mention that the featurs with high magnitude -negative or positive- will impact on the pca more than the values closest to 0, so We will assume that we care for the valus above <strong>'0.4'</strong>, and when I say increasing, I mean  having bigger value regardless of the sign of the number.<ol>
+<li>First Dimension, we see that there is a strong correlation between Detergent papers and Grocery. so it got high variance which mean small information loss, and any increase in those features would increase the variance, thus I think this dimension could be categorized as retail store.</li>
+<li>Second Dimension, We see that all features are correlated with Fresh, Frozen, Delicatessen so any decrease in those would increase the variance.</li>
+<li>Third Dimension, We see that Fresh and Delicatessen are affecting the variance so any incrase in them would increase the variance of that Dimension.</li>
+<li>Forth Dimension, We see that Frozen is mainly dominating the variance with Delicatessen so any increase in Frozen or Delicatessen would increase the variance.</li>
 </ol>
 </li>
 </ul>
@@ -20288,7 +20309,7 @@ koAEAABQEpAAAABKAhIAAEDp/wH/wzthseDw7gAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display sample log-data after having a PCA transformation applied</span>
@@ -20392,7 +20413,7 @@ koAEAABQEpAAAABKAhIAAEDp/wH/wzthseDw7gAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Apply PCA by fitting the good data with only two dimensions</span>
@@ -20424,7 +20445,7 @@ koAEAABQEpAAAABKAhIAAEDp/wH/wzthseDw7gAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display sample log-data after applying PCA transformation in two dimensions</span>
@@ -20507,7 +20528,7 @@ koAEAABQEpAAAABKAhIAAEDp/wH/wzthseDw7gAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a biplot</span>
@@ -20524,13 +20545,13 @@ koAEAABQEpAAAABKAhIAAEDp/wH/wzthseDw7gAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[31]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe42d3d8ba8&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f5b85682e10&gt;</pre>
 </div>
 
 </div>
@@ -21717,7 +21738,7 @@ QmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Apply your clustering algorithm of choice to the reduced data</span>
@@ -27721,7 +27742,7 @@ XUQQzSf3mfUAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Optimal One</span>
@@ -27792,7 +27813,7 @@ XUQQzSf3mfUAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display the results of the clustering from implementation</span>
@@ -28570,7 +28591,7 @@ iAv/Aa/M3mwPEXpIAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Inverse transform the centers</span>
@@ -28715,7 +28736,7 @@ iAv/Aa/M3mwPEXpIAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display the predictions</span>
@@ -28839,7 +28860,7 @@ Sample point 2 predicted to be in Cluster 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display the clustering results based on &#39;Channel&#39; data</span>
